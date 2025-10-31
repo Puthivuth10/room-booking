@@ -1,0 +1,398 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: white;
+  color: black;
+  line-height: 1.5;
+}
+
+/* Logo + School name */
+.logo_name {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-left: 2rem;
+}
+
+.logo_name img {
+  height: 60px;
+  width: auto;
+  vertical-align: middle;
+}
+
+.logo_name .username-logo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  white-space: nowrap;
+}
+
+.top-nav {
+  margin-top: 12px;
+  display: flex;
+  justify-content: right; /* horizontally center nav_list */
+  align-items: center; /* vertically center */
+  width: 100%;
+}
+
+/* Top Navigation Bar */
+.nav_list {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  align-items: center;
+} 
+.nav_items .nav_link {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.nav_link:hover,
+.nav_link.active-link {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.nav_link.active-link {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Animation for nav items */
+@keyframes slideInRightToLeft {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.nav_list li {
+  animation: slideInRightToLeft 0.5s ease forwards;
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.nav_list li:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.nav_list li:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.nav_list li:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.nav_list li:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.nav_list li:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+/* Icon Section */
+.icon {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.icon img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s;
+  filter: brightness(0) invert(1);
+}
+
+.icon img:hover {
+  transform: scale(1.2);
+}
+
+/* Login Button */
+.booking button {
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: #a10a0d;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 25px;
+  margin-left: 15px;
+}
+
+.booking button:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Main content */
+main {
+  height: calc(100vh - 92px);
+  overflow: hidden;
+}
+
+
+/* Carousel styles */
+.carousel,
+.carousel-inner,
+.carousel-item {
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Carousel overlay content */
+.carousel-caption {
+  align-content: center;
+  position: flex;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 2rem;
+  border-radius: 15px;
+  backdrop-filter: bl ur(10px);
+  width: 50%;
+}
+
+.carousel-caption h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-caption p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.carousel-caption .btn {
+  padding: 1rem 2rem;
+  background-color: #a10a0d;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.carousel-caption .btn:hover {
+  background-color: #8a0808;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Custom carousel controls */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  border: 2px solid white;
+}
+
+.carousel-control-prev {
+  left: 30px;
+}
+
+.carousel-control-next {
+  right: 30px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Overlay Menu */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.95);
+  overflow-x: hidden;
+  transition: width 0.5s ease;
+  z-index: 2000;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+}
+
+.overlay-content a {
+  padding: 1.5rem;
+  text-decoration: none;
+  font-size: 2.5rem;
+  color: white;
+  display: block;
+  transition: color 0.3s;
+}
+
+.overlay-content a:hover {
+  color: #a10a0d;
+}
+
+.closebtn {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  font-size: 3.5rem;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Login Popup */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 1500;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  display: none;
+  z-index: 1501;
+  min-width: 350px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.3s;
+}
+
+.close-btn:hover {
+  color: #333;
+}
+
+.form h2 {
+  margin-bottom: 1.5rem;
+  color: #a10a0d;
+  text-align: center;
+}
+
+.form-element {
+  margin-bottom: 1rem;
+}
+
+.form-element label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-element input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-element input:focus {
+  outline: none;
+  border-color: #a10a0d;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checkbox input {
+  width: auto;
+}
+
+.form-element button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #a10a0d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-element button:hover {
+  background-color: #8a0808;
+}
+
+.form-element a {
+  color: #a10a0d;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.form-element a:hover {
+  text-decoration: underline;
+}

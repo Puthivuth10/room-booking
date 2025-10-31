@@ -1,0 +1,343 @@
+/* styles/roomDetails.css */
+
+/* Base styles */
+.book-room-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Main content styles */
+.booking-containers {
+  display: flex;
+    flex-direction: column;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+.top {
+  display: flex;
+  flex-direction: row;       /* Ensure it's horizontal */
+  align-items: center;       /* Align items vertically centered */
+  flex-wrap: wrap;             /* Optional: allow wrapping on small screens */
+  gap: 20rem;                 /* Add spacing between items */
+}
+.book-favorite{
+  display: flex;
+  flex-direction: row;       /* Ensure it's horizontal */
+  align-items: center;       /* Align items vertically centered */
+  justify-content: space-between; /* Or center/start depending on layout */
+  flex-wrap: wrap;             /* Optional: allow wrapping on small screens */
+  gap: 1rem;                 /* Add spacing between items */
+  margin-bottom: 2rem;   
+}
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-outline-danger {
+  background-color: transparent;
+  color: #dc3545;
+  border: 1px solid #dc3545;
+}
+
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Room details card */
+.card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.list-group-item {
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.list-group-item:last-child {
+  border-bottom: none;
+}
+
+.list-group-item strong {
+  color: #3498db;
+  min-width: 120px;
+  display: inline-block;
+}
+
+/* Bookings table */
+.table-responsive {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  padding: 0.75rem;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.table thead th {
+  background-color: #3498db;
+  color: white;
+  font-weight: 600;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(52, 152, 219, 0.05);
+}
+
+/* Alert styles */
+.alert {
+  padding: 0.75rem 1.25rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  line-height: 1;
+  padding: 0;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+/* Footer styles */
+footer {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .nav_list {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .logo-container {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .booking-container {
+    padding: 1rem;
+    
+  }
+
+  
+  .card-body {
+    padding: 1rem;
+  }
+  
+  .list-group-item strong {
+    min-width: 100px;
+  }
+}
+
+/* Animation for favorite button */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.btn-outline-danger:hover, .btn-danger:hover {
+  animation: pulse 0.5s ease;
+}
+
+/* in your CSS, prevent scroll when pop up*/
+.body-no-scroll {
+  overflow: hidden;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Dim background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 10px;
+  width: 90%;
+  z-index: 1001;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  animation: fadeInScale 0.3s ease-in-out;
+}
+
+/* Optional animation */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-field label {
+  display: flex;
+  justify-items: start;
+  margin-bottom: 0;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-field input {
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-field input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Ensure DatePicker has proper spacing */
+.form-field .MuiTextField-root {
+  margin-top: 0;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  justify-content: flex-end;
+}
+
+
+.custom-date-picker {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #f9f9f9;
+  margin-bottom: 16px;
+}
+
+/* Force DatePicker popup to appear above modal */
+.MuiPickersPopper-root {
+  z-index: 1500 !important;
+}
+
+.popup-backdrop {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-message {
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  text-align: center;
+  max-width: 300px;
+}
+
+.popup-message p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.popup-message button {
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 1px solid #ff0000;
+  background-color: #ff0000;
+  color: white;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.popup-message button:hover {
+  background-color: #ce0808;
+  transform: scale(1.05);
+}

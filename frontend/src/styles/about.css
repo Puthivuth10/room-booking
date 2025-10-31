@@ -1,0 +1,121 @@
+/* About Page Styles */
+.about-container {
+    max-width: 1200px;
+    margin: 2.5rem auto;
+    padding: 0 2.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #3a3a3a;
+}
+
+.about-section h1 {
+    color: #A10A0D;
+    margin-bottom: 2rem;
+    font-size: 2.6rem;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgba(161, 10, 13, 0.4);
+}
+
+.about-content {
+    background-color: #fff;
+    padding: 2.5rem 2.5rem 3rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0.30, 0.30);
+    line-height: 1.85;
+    font-size: 1.15rem;
+}
+
+.about-content p {
+    margin-bottom: 1.8rem;
+    color: #4a4a4a;
+}
+
+.about-features {
+    margin: 2.5rem 0;
+    padding-left: 1.2rem;
+}
+
+.about-features li {
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    color: #555;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;  
+    transform: translateX(0);   
+}
+
+.about-features li:hover {
+    color: #A10A0D;   
+    font-weight: 700;           
+    transform: translateX(5px);  
+    background-color: #f9f9f9;    
+    border-radius: 6px;
+    padding-left: 8px;
+    cursor: pointer;
+}
+
+.about-features i {
+    color: #A10A0D; 
+    font-size: 1.3rem;
+}
+
+.contact-info {
+    background-color: #A10A0D; 
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 3rem;
+    box-shadow: 0 4px 20px rgba(161, 10, 13, 0.4);
+}
+
+.contact-info h2 {
+    color:white;
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.15rem;
+}
+
+.contact-info i {
+    font-size: 1.4rem;
+}
+
+@media (max-width: 768px) {
+    .about-section h1 {
+        font-size: 2.2rem;
+    }
+    
+    .about-content {
+        padding: 1.8rem 1.8rem 2.5rem;
+        font-size: 1.1rem;
+    }
+    
+    .about-features li {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .fixed-logout {
+        bottom: 15px;
+        right: 15px;
+    }
+    
+    .logout-btn {
+        padding: 10px 20px;
+        font-size: 1.1rem;
+    }
+}
+
